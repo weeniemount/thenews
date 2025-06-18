@@ -20,5 +20,6 @@
                 <CompositeTransform Rotation="-16.137" SkewX="31.997" TranslateX="-9.375" TranslateY="2.713"/>
             </Button.RenderTransform>
         </Button>
+        <Button Content="bussin industries" HorizontalAlignment="Left" Margin="21,75,0,0" VerticalAlignment="Top" Width="136" Click="Button_Click_2"/>
     </Grid>
 </Page>

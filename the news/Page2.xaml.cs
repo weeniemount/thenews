@@ -126,5 +126,55 @@ namespace the_news
             ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
         }
 
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var toastContent = new ToastContent()
+            {
+                Visual = new ToastVisual()
+                {
+                    BindingGeneric = new ToastBindingGeneric()
+                    {
+                        Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "BREAKING NEWS!!!"
+                },
+                new AdaptiveText()
+                {
+                    Text = "Bussin Industries shares cryptic note on staff channels."
+                },
+                new AdaptiveText()
+                    {
+                        Text = "\nSource: X",
+                        HintStyle = AdaptiveTextStyle.Header
+                    },
+                new AdaptiveImage()
+                {
+                    Source = "Assets/Images/bussin_industries.png"
+                }
+            }
+                    }
+                },
+                Actions = new ToastActionsCustom()
+                {
+                    Buttons =
+        {
+            new ToastButton("Read More", "likePhoto&photoId=92187")
+            {
+                ActivationType = ToastActivationType.Background
+            },
+            new ToastButton("discard", "action=commentPhoto&photoId=92187")
+            {
+                ActivationType = ToastActivationType.Foreground
+            }
+        }
+                },
+                Launch = "action=viewPhoto&photoId=92187"
+            };
+
+            var toastNotif = new ToastNotification(toastContent.GetXml());
+            ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
+        }
     }
 }
