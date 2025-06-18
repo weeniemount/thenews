@@ -28,6 +28,13 @@ namespace the_news
         public Page2()
         {
             this.InitializeComponent();
+            var applicationView = ApplicationView.GetForCurrentView();
+
+
+            applicationView.SetPreferredMinSize(new Size(815, 471));
+
+
+            bool viewShown = applicationView.TryResizeView(new Size(815, 471));
         }
 
         private void Button_Click_1_2(object sender, RoutedEventArgs e)
