@@ -252,7 +252,7 @@ namespace the_news
                 new AdaptiveImage()
                 {
                     HintCrop = AdaptiveImageCrop.Circle,
-                    Source = "Assets/johnphone.jpg"
+                    Source = "Assets/Images/johnphone.jpg"
                 }
             }
                     }
@@ -264,7 +264,7 @@ namespace the_news
             new ToastButton("Answer", "action=answer&callId=938163")
             {
                 ActivationType = ToastActivationType.Foreground,
-                ImageUri = "Assets/answer.png"
+                ImageUri = "Assets/Images/answer.png"
             }
         }
                 },
