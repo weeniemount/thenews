@@ -16,13 +16,13 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.ViewManagement;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+
 
 namespace the_news
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
+    
+    
+    
     public sealed partial class MainPage : Page
     {
         public MainPage()
@@ -30,10 +30,10 @@ namespace the_news
             this.InitializeComponent();
             var applicationView = ApplicationView.GetForCurrentView();
 
-            // Set preferred window size
+            
             applicationView.SetPreferredMinSize(new Size(815, 471));
 
-            // Try to resize the window
+            
             bool viewShown = applicationView.TryResizeView(new Size(815, 471));
         }
 
@@ -65,10 +65,10 @@ namespace the_news
                 Launch = "action=viewStory&storyId=92187"
             };
 
-            // Create the toast notification
+            
             var toastNotif = new ToastNotification(toastContent.GetXml());
 
-            // And send the notification
+            
             ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
         }
 
@@ -120,10 +120,10 @@ namespace the_news
                 Launch = "action=viewEvent&eventId=63851"
             };
 
-            // Create the toast notification
+            
             var toastNotif = new ToastNotification(toastContent.GetXml());
 
-            // And send the notification
+            
             ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
         }
 
@@ -176,10 +176,10 @@ namespace the_news
                 Scenario = ToastScenario.Alarm
             };
 
-            // Create the toast notification
+            
             var toastNotif = new ToastNotification(toastContent.GetXml());
 
-            // And send the notification
+            
             ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
         }
 
@@ -224,10 +224,10 @@ namespace the_news
                 Launch = "action=viewDownload&downloadId=9438108"
             };
 
-            // Create the toast notification
+            
             var toastNotif = new ToastNotification(toastContent.GetXml());
 
-            // And send the notification
+            
             ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
         }
 
@@ -272,10 +272,10 @@ namespace the_news
                 Scenario = ToastScenario.IncomingCall
             };
 
-            // Create the toast notification
+            
             var toastNotif = new ToastNotification(toastContent.GetXml());
 
-            // And send the notification
+            
             ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
         }
 
@@ -444,10 +444,10 @@ namespace the_news
                 }
             };
 
-            // Create the toast notification
+            
             var toastNotif = new ToastNotification(toastContent.GetXml());
 
-            // And send the notification
+            
             ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
         }
 
@@ -494,10 +494,136 @@ namespace the_news
                 Launch = "action=viewFriendRequest&userId=49183"
             };
 
-            // Create the toast notification
+            
             var toastNotif = new ToastNotification(toastContent.GetXml());
 
-            // And send the notification
+            
+            ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
+        }
+
+
+        
+        private DispatcherTimer toastTimer;
+        private int currentToastIndex = 0;
+        private bool isAutoToastRunning = false;
+
+        
+        private void AutoToast_Click(object sender, RoutedEventArgs e)
+        {
+            if (!isAutoToastRunning)
+            {
+                
+                isAutoToastRunning = true;
+                currentToastIndex = 0;
+
+                
+                if (toastTimer == null)
+                {
+                    toastTimer = new DispatcherTimer();
+                    toastTimer.Interval = TimeSpan.FromMilliseconds(100); 
+                    toastTimer.Tick += ToastTimer_Tick;
+                }
+
+                toastTimer.Start();
+
+                
+                if (sender is Button btn)
+                {
+                    btn.Content = "Stop Auto Toast";
+                }
+            }
+            else
+            {
+                
+                isAutoToastRunning = false;
+                toastTimer?.Stop();
+
+                
+                if (sender is Button btn)
+                {
+                    btn.Content = "Start Auto Toast";
+                }
+            }
+        }
+
+        private void ToastTimer_Tick(object sender, object e)
+        {
+            
+            switch (currentToastIndex)
+            {
+                case 0:
+                    Button_Click(null, null); 
+                    break;
+                case 1:
+                    Button_Click_1(null, null); 
+                    break;
+                case 2:
+                    Button_Click_2(null, null); 
+                    break;
+                case 3:
+                    Button_Click_3(null, null); 
+                    break;
+                case 4:
+                    Button_Click_4(null, null); 
+                    break;
+                case 5:
+                    Button_Click_5(null, null); 
+                    break;
+                case 6:
+                    Button_Click_6(null, null);
+                    break;
+                case 7:
+                    Button_Click_7(null, null);
+                    break;
+            }
+
+            
+            currentToastIndex = (currentToastIndex + 1) % 8;
+        }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            var toastContent = new ToastContent()
+            {
+                Visual = new ToastVisual()
+                {
+                    BindingGeneric = new ToastBindingGeneric()
+                    {
+                        Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "we redesigned our website"
+                },
+                new AdaptiveText()
+                {
+                    Text = "enjoy it and leave feed back"
+                },
+                new AdaptiveImage()
+                {
+                    Source = "Assets/Images/redesign.png"
+                }
+            }
+                    }
+                },
+                Actions = new ToastActionsCustom()
+                {
+                    Buttons =
+        {
+            new ToastButton("good", "likePhoto&photoId=92187")
+            {
+                ActivationType = ToastActivationType.Background
+            },
+            new ToastButton("horrid", "action=commentPhoto&photoId=92187")
+            {
+                ActivationType = ToastActivationType.Foreground
+            }
+        }
+                },
+                Launch = "action=viewPhoto&photoId=92187"
+            };
+
+            var toastNotif = new ToastNotification(toastContent.GetXml());
             ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
         }
     }

@@ -36,5 +36,8 @@
             </Button.RenderTransform>
         </Button>
 
+        <Button x:Name="AutoToastButton" Content="Start Auto Toast" Click="AutoToast_Click" HorizontalAlignment="Left" Margin="623,76,0,0" VerticalAlignment="Top" Height="293" Width="182" />
+        <Button Content="redesign" HorizontalAlignment="Left" Margin="437,190,0,0" VerticalAlignment="Top" Click="Button_Click_7" Height="96" Width="100"/>
+
     </Grid>
 </Page>
