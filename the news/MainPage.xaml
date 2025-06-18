@@ -38,6 +38,19 @@
 
         <Button x:Name="AutoToastButton" Content="Start Auto Toast" Click="AutoToast_Click" HorizontalAlignment="Left" Margin="623,76,0,0" VerticalAlignment="Top" Height="293" Width="182" />
         <Button Content="redesign" HorizontalAlignment="Left" Margin="437,190,0,0" VerticalAlignment="Top" Click="Button_Click_7" Height="96" Width="100"/>
-
+        <StackPanel Orientation="Horizontal" Margin="10" Padding="389,343,0,0">
+            <TextBlock Text="Toast Interval:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <Slider x:Name="IntervalSlider" 
+            Minimum="50" 
+            Maximum="5000" 
+            Value="100" 
+            Width="200"
+            ValueChanged="IntervalSlider_ValueChanged"
+            VerticalAlignment="Center"/>
+            <TextBlock x:Name="IntervalLabel" 
+               Text="Interval: 100ms" 
+               VerticalAlignment="Center" 
+               Margin="10,0,0,0"/>
+        </StackPanel>
     </Grid>
 </Page>

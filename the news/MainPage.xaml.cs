@@ -507,7 +507,33 @@ namespace the_news
         private int currentToastIndex = 0;
         private bool isAutoToastRunning = false;
 
+
         
+        private double GetIntervalFromUI()
+        {
+            
+            return IntervalSlider.Value; 
+        }
+
+        
+        private void IntervalSlider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
+        {
+            
+            if (toastTimer != null && isAutoToastRunning)
+            {
+                toastTimer.Stop();
+                toastTimer.Interval = TimeSpan.FromMilliseconds(e.NewValue);
+                toastTimer.Start();
+            }
+
+            
+            if (IntervalLabel != null)
+            {
+                IntervalLabel.Text = $"Interval: {e.NewValue:F0}ms";
+            }
+        }
+
+
         private void AutoToast_Click(object sender, RoutedEventArgs e)
         {
             if (!isAutoToastRunning)
@@ -516,11 +542,13 @@ namespace the_news
                 isAutoToastRunning = true;
                 currentToastIndex = 0;
 
-                
+                double intervalMs = GetIntervalFromUI();
+
+
                 if (toastTimer == null)
                 {
                     toastTimer = new DispatcherTimer();
-                    toastTimer.Interval = TimeSpan.FromMilliseconds(100); 
+                    toastTimer.Interval = TimeSpan.FromMilliseconds(intervalMs);
                     toastTimer.Tick += ToastTimer_Tick;
                 }
 
