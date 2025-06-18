@@ -299,5 +299,59 @@ namespace the_news
             var toastNotif = new ToastNotification(toastContent.GetXml());
             ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
         }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            var toastContent = new ToastContent()
+            {
+                Visual = new ToastVisual()
+                {
+                    BindingGeneric = new ToastBindingGeneric()
+                    {
+                        Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "John Pork"
+                },
+                new AdaptiveText()
+                {
+                    Text = "Incoming Call - Sattelite"
+                },
+                new AdaptiveImage()
+                {
+                    HintCrop = AdaptiveImageCrop.Circle,
+                    Source = "Assets/Images/johnpork.jpg"
+                }
+            }
+                    }
+                },
+                Actions = new ToastActionsCustom()
+                {
+                    Buttons =
+        {
+            new ToastButton("Answer", "action=answer&callId=938163")
+            {
+                ActivationType = ToastActivationType.Foreground,
+                ImageUri = "Assets/Images/answer.png"
+            }
+        }
+                },
+                Launch = "action=answer&callId=938163",
+                Scenario = ToastScenario.IncomingCall,
+
+                Audio = new ToastAudio()
+                {
+                    Src = new Uri("ms-appx:///Assets/hescalling.wav"),
+                    Loop = true
+                }
+            };
+
+
+            var toastNotif = new ToastNotification(toastContent.GetXml());
+
+
+            ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
+        }
     }
 }

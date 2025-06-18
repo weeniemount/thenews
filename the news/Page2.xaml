@@ -30,5 +30,6 @@
             </Button.RenderTransform>
             <Image HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="50" Source="/Assets/Images/whateverthisis.png"/>
         </Button>
+        <Button Content="jonathon pork" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" Height="125" Width="256" Click="Button_Click_5"/>
     </Grid>
 </Page>
