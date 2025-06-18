@@ -41,7 +41,7 @@
         <StackPanel Orientation="Horizontal" Margin="10" Padding="389,343,0,0">
             <TextBlock Text="Toast Interval:" VerticalAlignment="Center" Margin="0,0,10,0"/>
             <Slider x:Name="IntervalSlider" 
-            Minimum="50" 
+            Minimum="0" 
             Maximum="5000" 
             Value="100" 
             Width="200"
