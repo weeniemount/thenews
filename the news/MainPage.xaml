@@ -52,5 +52,11 @@
                VerticalAlignment="Center" 
                Margin="10,0,0,0"/>
         </StackPanel>
+        <Button Content="Roadblocks" HorizontalAlignment="Left" Margin="339,328,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Click="Button_Click_8" UseLayoutRounding="False" Width="229" d:LayoutRounding="Auto">
+            <Button.RenderTransform>
+                <CompositeTransform SkewY="8.005" TranslateY="4.359"/>
+            </Button.RenderTransform>
+        </Button>
+        <Image HorizontalAlignment="Left" Height="100" Margin="112,364,0,0" VerticalAlignment="Top" Width="266" Source="/Assets/images/roadblockman.png" Stretch="Fill"/>
     </Grid>
 </Page>

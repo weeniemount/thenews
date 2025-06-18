@@ -144,6 +144,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Images\redesign.png" />
+    <Content Include="Assets\Images\roadblockman.png" />
+    <Content Include="Assets\Images\roadblocks.gif" />
     <Content Include="Assets\Images\Sunny.png" />
     <Content Include="Assets\LargeTile.png" />
     <Content Include="Assets\Images\reporter.png">

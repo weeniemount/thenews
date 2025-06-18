@@ -53,7 +53,7 @@ namespace the_news
                 },
                 new AdaptiveText()
                 {
-                    Text = "Someone just died? Who? We don't know."
+                    Text = "Someone just died! Who? We don't know."
                 }
             },
                         Attribution = new ToastGenericAttributionText()
@@ -643,6 +643,52 @@ namespace the_news
                 ActivationType = ToastActivationType.Background
             },
             new ToastButton("horrid", "action=commentPhoto&photoId=92187")
+            {
+                ActivationType = ToastActivationType.Foreground
+            }
+        }
+                },
+                Launch = "action=viewPhoto&photoId=92187"
+            };
+
+            var toastNotif = new ToastNotification(toastContent.GetXml());
+            ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
+        }
+
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+            var toastContent = new ToastContent()
+            {
+                Visual = new ToastVisual()
+                {
+                    BindingGeneric = new ToastBindingGeneric()
+                    {
+                        Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "BREAKING NEWS!!!"
+                },
+                new AdaptiveText()
+                {
+                    Text = "California man posts TikTok of him riding in his golf cart rambling on about 'roadblocks' on the beach, goes crazy fucking viral."
+                },
+                new AdaptiveImage()
+                {
+                    Source = "Assets/Images/roadblocks.gif"
+                }
+            }
+                    }
+                },
+                Actions = new ToastActionsCustom()
+                {
+                    Buttons =
+        {
+            new ToastButton("Read More", "likePhoto&photoId=92187")
+            {
+                ActivationType = ToastActivationType.Background
+            },
+            new ToastButton("discard", "action=commentPhoto&photoId=92187")
             {
                 ActivationType = ToastActivationType.Foreground
             }
