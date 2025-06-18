@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.StartScreen;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -176,5 +177,75 @@ namespace the_news
             var toastNotif = new ToastNotification(toastContent.GetXml());
             ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            var toastContent = new ToastContent()
+            {
+                Visual = new ToastVisual()
+                {
+                    BindingGeneric = new ToastBindingGeneric()
+                    {
+                        Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "BREAKING NEWS!!!"
+                },
+                new AdaptiveText()
+                {
+                    Text = "the h is here"
+                },
+                new AdaptiveImage()
+                {
+                    Source = "Assets/Images/h.gif"
+                }
+            }
+                    }
+                },
+                Actions = new ToastActionsCustom()
+                {
+                    Buttons =
+        {
+            new ToastButton("Read More", "likePhoto&photoId=92187")
+            {
+                ActivationType = ToastActivationType.Background
+            },
+            new ToastButton("discard", "action=commentPhoto&photoId=92187")
+            {
+                ActivationType = ToastActivationType.Foreground
+            }
+        }
+                },
+                Launch = "action=viewPhoto&photoId=92187"
+            };
+
+            var toastNotif = new ToastNotification(toastContent.GetXml());
+            ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
+        }
+
+
+        private async void Spawnhtile_Click(object sender, RoutedEventArgs e)
+        {
+            var tileId = "funnyTile_" + Guid.NewGuid().ToString(); // Unique ID per tile
+            var secondaryTile = new SecondaryTile(
+                tileId,
+                "Funny Tile",
+                "action=funnyTile",
+                new Uri("ms-appx:///Assets/Images/h.gif"),
+                Windows.UI.StartScreen.TileSize.Square150x150);
+
+            // Set background color using VisualElements
+            secondaryTile.VisualElements.BackgroundColor = Windows.UI.Colors.Orange;
+
+            bool isPinned = await secondaryTile.RequestCreateAsync();
+
+            if (isPinned)
+            {
+                // You can also update tile content here or later
+            }
+        }
+
+
     }
 }
