@@ -278,5 +278,177 @@ namespace the_news
             // And send the notification
             ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
         }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            var toastContent = new ToastContent()
+            {
+                Visual = new ToastVisual()
+                {
+                    BindingGeneric = new ToastBindingGeneric()
+                    {
+                        Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "BREAKING NEWS! the earth is on fire lmfao"
+                },
+                new AdaptiveGroup()
+                {
+                    Children =
+                    {
+                        new AdaptiveSubgroup()
+                        {
+                            HintWeight = 1,
+                            Children =
+                            {
+                                new AdaptiveText()
+                                {
+                                    Text = "Mon",
+                                    HintAlign = AdaptiveTextAlign.Center
+                                },
+                                new AdaptiveImage()
+                                {
+                                    HintRemoveMargin = true,
+                                    Source = "Assets/Images/Sunny.png"
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "63°",
+                                    HintAlign = AdaptiveTextAlign.Center
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "42°",
+                                    HintStyle = AdaptiveTextStyle.CaptionSubtle,
+                                    HintAlign = AdaptiveTextAlign.Center
+                                }
+                            }
+                        },
+                        new AdaptiveSubgroup()
+                        {
+                            HintWeight = 1,
+                            Children =
+                            {
+                                new AdaptiveText()
+                                {
+                                    Text = "Tue",
+                                    HintAlign = AdaptiveTextAlign.Center
+                                },
+                                new AdaptiveImage()
+                                {
+                                    HintRemoveMargin = true,
+                                    Source = "Assets/Images/Sunny.png"
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "78°",
+                                    HintAlign = AdaptiveTextAlign.Center
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "60°",
+                                    HintStyle = AdaptiveTextStyle.CaptionSubtle,
+                                    HintAlign = AdaptiveTextAlign.Center
+                                }
+                            }
+                        },
+                        new AdaptiveSubgroup()
+                        {
+                            HintWeight = 1,
+                            Children =
+                            {
+                                new AdaptiveText()
+                                {
+                                    Text = "Wed",
+                                    HintAlign = AdaptiveTextAlign.Center
+                                },
+                                new AdaptiveImage()
+                                {
+                                    HintRemoveMargin = true,
+                                    Source = "Assets/Images/Sunny.png"
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "96°",
+                                    HintAlign = AdaptiveTextAlign.Center
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "76°",
+                                    HintStyle = AdaptiveTextStyle.CaptionSubtle,
+                                    HintAlign = AdaptiveTextAlign.Center
+                                }
+                            }
+                        },
+                        new AdaptiveSubgroup()
+                        {
+                            HintWeight = 1,
+                            Children =
+                            {
+                                new AdaptiveText()
+                                {
+                                    Text = "Thu",
+                                    HintAlign = AdaptiveTextAlign.Center
+                                },
+                                new AdaptiveImage()
+                                {
+                                    HintRemoveMargin = true,
+                                    Source = "Assets/Images/Sunny.png"
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "132°",
+                                    HintAlign = AdaptiveTextAlign.Center
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "89°",
+                                    HintStyle = AdaptiveTextStyle.CaptionSubtle,
+                                    HintAlign = AdaptiveTextAlign.Center
+                                }
+                            }
+                        },
+                        new AdaptiveSubgroup()
+                        {
+                            HintWeight = 1,
+                            Children =
+                            {
+                                new AdaptiveText()
+                                {
+                                    Text = "Fri",
+                                    HintAlign = AdaptiveTextAlign.Center
+                                },
+                                new AdaptiveImage()
+                                {
+                                    HintRemoveMargin = true,
+                                    Source = "Assets/Images/Sunny.png"
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "244°",
+                                    HintAlign = AdaptiveTextAlign.Center
+                                },
+                                new AdaptiveText()
+                                {
+                                    Text = "120°",
+                                    HintStyle = AdaptiveTextStyle.CaptionSubtle,
+                                    HintAlign = AdaptiveTextAlign.Center
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+                    }
+                }
+            };
+
+            // Create the toast notification
+            var toastNotif = new ToastNotification(toastContent.GetXml());
+
+            // And send the notification
+            ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
+        }
     }
 }

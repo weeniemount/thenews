@@ -29,6 +29,7 @@
                 <CompositeTransform SkewX="-30.472" TranslateX="-52.662"/>
             </Button.RenderTransform>
         </Button>
+        <Button Content="the weather" HorizontalAlignment="Left" Margin="381,136,0,0" VerticalAlignment="Top" Width="237" Click="Button_Click_5"/>
 
     </Grid>
 </Page>
