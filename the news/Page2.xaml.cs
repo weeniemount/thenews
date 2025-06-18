@@ -246,6 +246,50 @@ namespace the_news
             }
         }
 
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            var toastContent = new ToastContent()
+            {
+                Visual = new ToastVisual()
+                {
+                    BindingGeneric = new ToastBindingGeneric()
+                    {
+                        Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "⚾️ Baseball on Discord?! 🤯"
+                },
+                new AdaptiveText()
+                {
+                    Text = "Fr fr, a baseball emoji just dropped on Discord. Icl, ts kinda mogging ngl. 🤣"
+                },
+                new AdaptiveImage()
+                {
+                    Source = "Assets/Images/whateverthisis.png"
+                }
+            }
+                    }
+                },
+                Actions = new ToastActionsCustom()
+                {
+                    Buttons =
+        {
+            new ToastButton("Read More", "likePhoto&photoId=92187")
+            {
+                ActivationType = ToastActivationType.Background
+            },
+            new ToastButton("discard", "action=commentPhoto&photoId=92187")
+            {
+                ActivationType = ToastActivationType.Foreground
+            }
+        }
+                },
+                Launch = "action=viewPhoto&photoId=92187"
+            };
 
+            var toastNotif = new ToastNotification(toastContent.GetXml());
+            ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
+        }
     }
 }

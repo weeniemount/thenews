@@ -163,9 +163,11 @@
     <Content Include="Assets\Images\roadblocks.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Images\snakewithhat.jpg" />
     <Content Include="Assets\Images\Sunny.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Images\whateverthisis.png" />
     <Content Include="Assets\LargeTile.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

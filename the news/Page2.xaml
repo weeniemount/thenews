@@ -22,5 +22,12 @@
         </Button>
         <Button Content="bussin industries" HorizontalAlignment="Left" Margin="21,75,0,0" VerticalAlignment="Top" Width="136" Click="Button_Click_2"/>
         <Button Content="add free downloadable h to your start menu" HorizontalAlignment="Left" Margin="328,10,0,0" VerticalAlignment="Top" Width="477" Click="Spawnhtile_Click" FontFamily="Segoe UI"/>
+        <Image HorizontalAlignment="Left" Height="155" Margin="10,314,0,0" VerticalAlignment="Top" Width="155" Source="/Assets/Images/snakewithhat.jpg"/>
+        <Button HorizontalAlignment="Left" Margin="579,47,0,0" VerticalAlignment="Top" Width="103" RenderTransformOrigin="0.5,0.5" Click="Button_Click_4">
+            <Button.RenderTransform>
+                <CompositeTransform SkewX="-61.557" TranslateX="-6.784"/>
+            </Button.RenderTransform>
+            <Image HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="50" Source="/Assets/Images/whateverthisis.png"/>
+        </Button>
     </Grid>
 </Page>
