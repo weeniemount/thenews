@@ -603,10 +603,13 @@ namespace the_news
                 case 7:
                     Button_Click_7(null, null);
                     break;
+                case 8:
+                    Button_Click_8(null, null);
+                    break;
             }
 
             
-            currentToastIndex = (currentToastIndex + 1) % 8;
+            currentToastIndex = (currentToastIndex + 1) % 9;
         }
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
