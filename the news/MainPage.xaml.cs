@@ -606,10 +606,16 @@ namespace the_news
                 case 8:
                     Button_Click_8(null, null);
                     break;
+                case 9:
+                    Button_Click_9(null, null);
+                    break;
+                case 10:
+                    Button_Click_10(null, null);
+                    break;
             }
 
             
-            currentToastIndex = (currentToastIndex + 1) % 9;
+            currentToastIndex = (currentToastIndex + 1) % 11;
         }
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
