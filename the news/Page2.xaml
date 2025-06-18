@@ -1,0 +1,14 @@
+﻿<Page
+    x:Class="the_news.Page2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:the_news"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="471" Width="815" RequestedTheme="Light">
+
+    <Grid>
+        <Button Content="page 1" HorizontalAlignment="Left" Margin="620,429,0,0" VerticalAlignment="Top" Width="179" Click="Button_Click_1_2" FontFamily="Segoe UI"/>
+    </Grid>
+</Page>

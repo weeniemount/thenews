@@ -749,5 +749,10 @@ namespace the_news
             var toastNotif = new ToastNotification(toastContent.GetXml());
             ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
         }
+
+        private void Button_Click_10(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Page2));
+        }
     }
 }
