@@ -353,5 +353,50 @@ namespace the_news
 
             ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
         }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            var toastContent = new ToastContent()
+            {
+                Visual = new ToastVisual()
+                {
+                    BindingGeneric = new ToastBindingGeneric()
+                    {
+                        Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "Text message from +1 248-434-5508"
+                },
+                new AdaptiveText()
+                {
+                    Text = "We've successfully assassinated the attacker. Thank you for contacting Valve Support."
+                }
+            },
+                        Attribution = new ToastGenericAttributionText()
+                        {
+                            Text = "Linker's Samsung Galaxy"
+                        }
+                    }
+                },
+                Actions = new ToastActionsCustom()
+                {
+                    Buttons =
+        {
+            new ToastButton("Gamble it all away", "action=pauseDownload&downloadId=9438108")
+            {
+                ActivationType = ToastActivationType.Background
+            }
+        }
+                },
+                Launch = "action=viewStory&storyId=92187"
+            };
+
+            // Create the toast notification
+            var toastNotif = new ToastNotification(toastContent.GetXml());
+
+            // And send the notification
+            ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
+        }
     }
 }

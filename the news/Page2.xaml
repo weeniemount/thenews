@@ -31,5 +31,10 @@
             <Image HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="50" Source="/Assets/Images/whateverthisis.png"/>
         </Button>
         <Button Content="jonathon pork" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" Height="125" Width="256" Click="Button_Click_5"/>
+        <Button Content="linker's at it again!" HorizontalAlignment="Left" Margin="354,136,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" Width="213" d:LayoutRounding="Auto" Click="Button_Click_6">
+            <Button.RenderTransform>
+                <CompositeTransform SkewX="-19.44" TranslateX="5.647"/>
+            </Button.RenderTransform>
+        </Button>
     </Grid>
 </Page>
