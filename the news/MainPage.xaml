@@ -6,13 +6,13 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="471" Width="815">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="471" Width="815" RequestedTheme="Light">
 
     <Grid>
         <Image HorizontalAlignment="Left" Height="464" VerticalAlignment="Top" Width="843" Source="/Assets/Images/reporter.png"/>
         <Button Content="somone just fucking died" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" Click="Button_Click" Height="51" Width="202"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,4,0,0" Text="welcome to the NEWS!!!!!" TextWrapping="Wrap" VerticalAlignment="Top" Height="46" Width="445" FontSize="36" IsColorFontEnabled="False" FontStyle="Oblique"/>
-        <Button Content="donation" HorizontalAlignment="Left" Margin="227,61,0,0" VerticalAlignment="Top" Click="Button_Click_1" RenderTransformOrigin="0.5,0.5">
+        <TextBlock HorizontalAlignment="Left" Margin="10,4,0,0" Text="welcome to the NEWS!!!!!" TextWrapping="Wrap" VerticalAlignment="Top" Height="46" Width="445" FontSize="36" IsColorFontEnabled="False" FontStyle="Oblique" FontFamily="Times New Roman"/>
+        <Button Content="donation" HorizontalAlignment="Left" Margin="227,61,0,0" VerticalAlignment="Top" Click="Button_Click_1" RenderTransformOrigin="0.5,0.5" FontFamily="Times New Roman">
             <Button.RenderTransform>
                 <CompositeTransform Rotation="31.3" SkewY="29.612" TranslateX="-11.22" TranslateY="18.454"/>
             </Button.RenderTransform>
