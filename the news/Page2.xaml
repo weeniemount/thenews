@@ -21,6 +21,6 @@
             </Button.RenderTransform>
         </Button>
         <Button Content="bussin industries" HorizontalAlignment="Left" Margin="21,75,0,0" VerticalAlignment="Top" Width="136" Click="Button_Click_2"/>
-        <Button Content="add free downloadable h to your start menu" HorizontalAlignment="Left" Margin="328,10,0,0" VerticalAlignment="Top" Width="477" Click="Spawnhtile_Click"/>
+        <Button Content="add free downloadable h to your start menu" HorizontalAlignment="Left" Margin="328,10,0,0" VerticalAlignment="Top" Width="477" Click="Spawnhtile_Click" FontFamily="Segoe UI"/>
     </Grid>
 </Page>
