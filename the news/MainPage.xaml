@@ -30,6 +30,11 @@
             </Button.RenderTransform>
         </Button>
         <Button Content="the weather" HorizontalAlignment="Left" Margin="381,136,0,0" VerticalAlignment="Top" Width="237" Click="Button_Click_5"/>
+        <Button Content="john phone FQ" HorizontalAlignment="Left" Margin="197,135,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Width="125" Click="Button_Click_6">
+            <Button.RenderTransform>
+                <CompositeTransform SkewX="-16.861" TranslateX="5.796"/>
+            </Button.RenderTransform>
+        </Button>
 
     </Grid>
 </Page>

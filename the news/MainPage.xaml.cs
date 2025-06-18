@@ -450,5 +450,55 @@ namespace the_news
             // And send the notification
             ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
         }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            var toastContent = new ToastContent()
+            {
+                Visual = new ToastVisual()
+                {
+                    BindingGeneric = new ToastBindingGeneric()
+                    {
+                        Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "John Phone sent you a friend request"
+                },
+                new AdaptiveText()
+                {
+                    Text = "i want Sponsorships."
+                }
+            },
+                        AppLogoOverride = new ToastGenericAppLogo()
+                        {
+                            Source = "Assets/Images/johnphone.jpg",
+                            HintCrop = ToastGenericAppLogoCrop.Circle
+                        }
+                    }
+                },
+                Actions = new ToastActionsCustom()
+                {
+                    Buttons =
+        {
+            new ToastButton("Accept", "action=acceptFriendRequest&userId=49183")
+            {
+                ActivationType = ToastActivationType.Background
+            },
+            new ToastButton("Decline", "action=declineFriendRequest&userId=49183")
+            {
+                ActivationType = ToastActivationType.Background
+            }
+        }
+                },
+                Launch = "action=viewFriendRequest&userId=49183"
+            };
+
+            // Create the toast notification
+            var toastNotif = new ToastNotification(toastContent.GetXml());
+
+            // And send the notification
+            ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
+        }
     }
 }
