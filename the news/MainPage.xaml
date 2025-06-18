@@ -58,5 +58,6 @@
             </Button.RenderTransform>
         </Button>
         <Image HorizontalAlignment="Left" Height="100" Margin="112,364,0,0" VerticalAlignment="Top" Width="266" Source="/Assets/images/roadblockman.png" Stretch="Fill"/>
+        <Button Content="linkie" HorizontalAlignment="Left" Margin="23,382,0,0" VerticalAlignment="Top" Height="64" Click="Button_Click_9"/>
     </Grid>
 </Page>

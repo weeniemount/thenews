@@ -703,5 +703,51 @@ namespace the_news
             var toastNotif = new ToastNotification(toastContent.GetXml());
             ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
         }
+
+        private void Button_Click_9(object sender, RoutedEventArgs e)
+        {
+            var toastContent = new ToastContent()
+            {
+                Visual = new ToastVisual()
+                {
+                    BindingGeneric = new ToastBindingGeneric()
+                    {
+                        Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "BREAKING NEWS!!!"
+                },
+                new AdaptiveText()
+                {
+                    Text = "Discord user @linker.sh, from the server 'Face's attic', goes all in on black, loses it all in 1 night - tragedy unfolds."
+                },
+                new AdaptiveImage()
+                {
+                    Source = "Assets/Images/linker.sh.png"
+                }
+            }
+                    }
+                },
+                Actions = new ToastActionsCustom()
+                {
+                    Buttons =
+        {
+            new ToastButton("Read More", "likePhoto&photoId=92187")
+            {
+                ActivationType = ToastActivationType.Background
+            },
+            new ToastButton("discard", "action=commentPhoto&photoId=92187")
+            {
+                ActivationType = ToastActivationType.Foreground
+            }
+        }
+                },
+                Launch = "action=viewPhoto&photoId=92187"
+            };
+
+            var toastNotif = new ToastNotification(toastContent.GetXml());
+            ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
+        }
     }
 }
