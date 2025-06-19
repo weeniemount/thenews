@@ -21,7 +21,7 @@
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
       <Extensions>
-        <Extension Category="windows.backgroundTasks" EntryPoint="the_news.TileUpdateBackgroundTask">
+        <Extension Category="windows.backgroundTasks" EntryPoint="the_news.hTileUpdateBackgroundTask">
           <BackgroundTasks>
             <Task Type="general" />
           </BackgroundTasks>

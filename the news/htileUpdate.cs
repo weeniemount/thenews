@@ -6,7 +6,7 @@ using System;
 
 namespace the_news
 {
-    public sealed class TileUpdateBackgroundTask : IBackgroundTask
+    public sealed class hTileUpdateBackgroundTask : IBackgroundTask
     {
         public void Run(IBackgroundTaskInstance taskInstance)
         {

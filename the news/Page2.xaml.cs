@@ -261,7 +261,7 @@ namespace the_news
                 ApplicationData.Current.LocalSettings.Values["AnimatedTileId"] = tileId;
 
                 UpdateSecondaryTileAnimation(tileId);
-                await RegisterTileUpdateBackgroundTaskAsync();
+                await RegisterhTileUpdateBackgroundTaskAsync();
             }
         }
 
@@ -292,9 +292,9 @@ namespace the_news
             }
         }
 
-        private async System.Threading.Tasks.Task RegisterTileUpdateBackgroundTaskAsync()
+        private async System.Threading.Tasks.Task RegisterhTileUpdateBackgroundTaskAsync()
         {
-            const string taskName = "TileUpdateBackgroundTask";
+            const string taskName = "hTileUpdateBackgroundTask";
 
             foreach (var task in BackgroundTaskRegistration.AllTasks)
             {
@@ -305,7 +305,7 @@ namespace the_news
             var builder = new BackgroundTaskBuilder
             {
                 Name = taskName,
-                TaskEntryPoint = "the_news.TileUpdateBackgroundTask"
+                TaskEntryPoint = "the_news.hTileUpdateBackgroundTask"
             };
 
             // Runs every 15 minutes (minimum allowed interval)
