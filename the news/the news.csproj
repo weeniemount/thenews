@@ -125,6 +125,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="hTileUpdate.cs" />
     <Compile Include="Page2.xaml.cs">
       <DependentUpon>Page2.xaml</DependentUpon>
     </Compile>
@@ -153,6 +154,20 @@
     <Content Include="Assets\Images\bussin_industries.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Images\h\h_1.png" />
+    <Content Include="Assets\Images\h\h_10.png" />
+    <Content Include="Assets\Images\h\h_11.png" />
+    <Content Include="Assets\Images\h\h_12.png" />
+    <Content Include="Assets\Images\h\h_13.png" />
+    <Content Include="Assets\Images\h\h_14.png" />
+    <Content Include="Assets\Images\h\h_2.png" />
+    <Content Include="Assets\Images\h\h_3.png" />
+    <Content Include="Assets\Images\h\h_4.png" />
+    <Content Include="Assets\Images\h\h_5.png" />
+    <Content Include="Assets\Images\h\h_6.png" />
+    <Content Include="Assets\Images\h\h_7.png" />
+    <Content Include="Assets\Images\h\h_8.png" />
+    <Content Include="Assets\Images\h\h_9.png" />
     <Content Include="Assets\Images\johnphone.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

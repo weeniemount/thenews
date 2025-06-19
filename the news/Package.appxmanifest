@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="c9e9b2b2-165d-4d91-864e-26007902968c" Publisher="CN=Bonki" Version="1.0.0.0" />
+  <Identity Name="weeniemount.TheNews" Publisher="CN=Bonki" Version="1.2.0.0" />
   <mp:PhoneIdentity PhoneProductId="c9e9b2b2-165d-4d91-864e-26007902968c" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>the news</DisplayName>
-    <PublisherDisplayName>Bonki</PublisherDisplayName>
+    <PublisherDisplayName>weenie</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
@@ -20,6 +20,13 @@
         </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" EntryPoint="the_news.TileUpdateBackgroundTask">
+          <BackgroundTasks>
+            <Task Type="general" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
     </Application>
   </Applications>
   <Capabilities>

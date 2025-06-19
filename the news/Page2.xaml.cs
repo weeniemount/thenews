@@ -16,6 +16,14 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.StartScreen;
 using Windows.UI.ViewManagement;
+using Windows.Data.Xml.Dom;
+using Windows.Storage;                 // For ApplicationData
+using Windows.UI.StartScreen;          // For SecondaryTile and TileSize
+using Windows.UI.Notifications;        // For TileUpdateManager etc.
+using Windows.Data.Xml.Dom;            // For XmlDocument
+using Windows.ApplicationModel.Background;  // For background task registration
+
+
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -232,25 +240,82 @@ namespace the_news
             ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
         }
 
-
         private async void Spawnhtile_Click(object sender, RoutedEventArgs e)
         {
             var tileId = "h" + Guid.NewGuid().ToString(); // Unique ID per tile
+
             var secondaryTile = new SecondaryTile(
                 tileId,
                 "h",
                 "action=h",
-                new Uri("ms-appx:///Assets/Images/h.gif"),
+                new Uri("ms-appx:///Assets/Images/h/h_1.png"), // first frame icon
                 Windows.UI.StartScreen.TileSize.Square150x150);
 
-            // Set background color using VisualElements
             secondaryTile.VisualElements.BackgroundColor = Windows.UI.Colors.Orange;
 
             bool isPinned = await secondaryTile.RequestCreateAsync();
 
             if (isPinned)
             {
-                // You can also update tile content here or later
+                // Store tileId so background task can find it
+                ApplicationData.Current.LocalSettings.Values["AnimatedTileId"] = tileId;
+
+                UpdateSecondaryTileAnimation(tileId);
+                await RegisterTileUpdateBackgroundTaskAsync();
+            }
+        }
+
+        private void UpdateSecondaryTileAnimation(string tileId)
+        {
+            var tileUpdater = TileUpdateManager.CreateTileUpdaterForSecondaryTile(tileId);
+            tileUpdater.EnableNotificationQueue(true);
+            tileUpdater.Clear();
+
+            for (int i = 1; i <= 14; i++)
+            {
+                var tileXmlString = $@"
+                <tile>
+                    <visual>
+                        <binding template='TileSquare150x150Image'>
+                            <image id='1' src='ms-appx:///Assets/Images/h/h_{i}.png' alt='h'/>
+                        </binding>
+                    </visual>
+                </tile>";
+
+                var xmlDoc = new Windows.Data.Xml.Dom.XmlDocument();
+                xmlDoc.LoadXml(tileXmlString);
+
+                var tileNotification = new TileNotification(xmlDoc);
+                tileNotification.ExpirationTime = DateTimeOffset.Now.AddSeconds(i * 2);
+
+                tileUpdater.Update(tileNotification);
+            }
+        }
+
+        private async System.Threading.Tasks.Task RegisterTileUpdateBackgroundTaskAsync()
+        {
+            const string taskName = "TileUpdateBackgroundTask";
+
+            foreach (var task in BackgroundTaskRegistration.AllTasks)
+            {
+                if (task.Value.Name == taskName)
+                    return; // Already registered
+            }
+
+            var builder = new BackgroundTaskBuilder
+            {
+                Name = taskName,
+                TaskEntryPoint = "the_news.TileUpdateBackgroundTask"
+            };
+
+            // Runs every 15 minutes (minimum allowed interval)
+            builder.SetTrigger(new TimeTrigger(15, false));
+
+            var access = await BackgroundExecutionManager.RequestAccessAsync();
+
+            if (access == BackgroundAccessStatus.AlwaysAllowed || access == BackgroundAccessStatus.AllowedSubjectToSystemPolicy)
+            {
+                builder.Register();
             }
         }
 
