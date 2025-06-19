@@ -463,5 +463,40 @@ namespace the_news
             // And send the notification
             ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
         }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            var toastContent = new ToastContent()
+            {
+                Visual = new ToastVisual()
+                {
+                    BindingGeneric = new ToastBindingGeneric()
+                    {
+                        Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "h"
+                },
+                new AdaptiveText()
+                {
+                    Text = "h"
+                },
+                new AdaptiveImage()
+                {
+                    Source = "Assets/Images/h.gif"
+                }
+            }
+                    }
+                },
+                Launch = "action=viewPhoto&photoId=92187"
+            };
+
+            // Create the toast notification
+            var toastNotif = new ToastNotification(toastContent.GetXml());
+
+            // And send the notification
+            ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
+        }
     }
 }
