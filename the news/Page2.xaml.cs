@@ -235,11 +235,11 @@ namespace the_news
 
         private async void Spawnhtile_Click(object sender, RoutedEventArgs e)
         {
-            var tileId = "funnyTile_" + Guid.NewGuid().ToString(); // Unique ID per tile
+            var tileId = "h" + Guid.NewGuid().ToString(); // Unique ID per tile
             var secondaryTile = new SecondaryTile(
                 tileId,
-                "Funny Tile",
-                "action=funnyTile",
+                "h",
+                "action=h",
                 new Uri("ms-appx:///Assets/Images/h.gif"),
                 Windows.UI.StartScreen.TileSize.Square150x150);
 
