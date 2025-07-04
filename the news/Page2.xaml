@@ -39,5 +39,6 @@
         <Button HorizontalAlignment="Left" Margin="634,122,0,0" VerticalAlignment="Top" Width="165" Click="Button_Click_7">
             <Image HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="51" Source="/Assets/Images/h.gif"/>
         </Button>
+        <Button Content="Find me online" HorizontalAlignment="Left" Margin="282,189,0,0" VerticalAlignment="Top" Width="274" Click="Button_Click_8" Height="160"/>
     </Grid>
 </Page>

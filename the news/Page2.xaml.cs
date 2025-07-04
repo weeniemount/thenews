@@ -498,5 +498,65 @@ namespace the_news
             // And send the notification
             ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
         }
+
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+            var toastContent = new ToastContent()
+            {
+                Visual = new ToastVisual()
+                {
+                    BindingGeneric = new ToastBindingGeneric()
+                    {
+                        Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "John Phone",
+                    HintMaxLines = 1
+                },
+                new AdaptiveText()
+                {
+                    Text = "Find me online"
+                }
+            },
+                        HeroImage = new ToastGenericHeroImage()
+                        {
+                            Source = "Assets/Images/itsme...johnphone.jpg"
+                        },
+                        AppLogoOverride = new ToastGenericAppLogo()
+                        {
+                            Source = "Assets/Images/johnphone.jpg",
+                            HintCrop = ToastGenericAppLogoCrop.Circle
+                        }
+                    }
+                },
+                Actions = new ToastActionsCustom()
+                {
+                    Inputs =
+        {
+            new ToastTextBox("textBox")
+            {
+                PlaceholderContent = "reply"
+            }
+        },
+                    Buttons =
+        {
+            new ToastButton("Send", "action=reply&threadId=92187")
+            {
+                ActivationType = ToastActivationType.Background,
+                ImageUri = "Assets/Images/send.png",
+                //InputId = "textBox"
+            }
+        }
+                },
+                Launch = "action=openThread&threadId=92187"
+            };
+
+            // Create the toast notification
+            var toastNotif = new ToastNotification(toastContent.GetXml());
+
+            // And send the notification
+            ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
+        }
     }
 }
