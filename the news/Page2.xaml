@@ -40,5 +40,9 @@
             <Image HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="51" Source="/Assets/Images/h.gif"/>
         </Button>
         <Button Content="Find me online" HorizontalAlignment="Left" Margin="282,189,0,0" VerticalAlignment="Top" Width="274" Click="Button_Click_8" Height="160"/>
+        <Button Content="goog serviecs" HorizontalAlignment="Left" Margin="591,245,0,0" VerticalAlignment="Top" Height="79" Width="143" Click="Button_Click_9"/>
+        <Button Content="f;las" HorizontalAlignment="Left" Margin="211,387,0,0" VerticalAlignment="Top" Width="177" Click="Button_Click_10"/>
+        <Button Content="cofee&#xD;&#xA;" HorizontalAlignment="Left" Margin="188,285,0,0" VerticalAlignment="Top" Height="81" Click="Button_Click_11"/>
+        <Button Content="noskid" HorizontalAlignment="Left" Margin="457,403,0,0" VerticalAlignment="Top" Width="295" Click="Button_Click_12"/>
     </Grid>
 </Page>

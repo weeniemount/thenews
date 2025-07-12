@@ -558,5 +558,173 @@ namespace the_news
             // And send the notification
             ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
         }
+
+        private void Button_Click_9(object sender, RoutedEventArgs e)
+        {
+            var toastContent = new ToastContent()
+            {
+                Visual = new ToastVisual()
+                {
+                    BindingGeneric = new ToastBindingGeneric()
+                    {
+                        Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "the news needs Google Play Services"
+                },
+                new AdaptiveText()
+                {
+                    Text = "the news uses Google Play Services to provide you a better experience. Install it. Right now. I don't care that you are using a desktop OS. Install it."
+                }
+            },
+                        AppLogoOverride = new ToastGenericAppLogo()
+                        {
+                            Source = "Assets/Images/googleplayservices.png"
+                        }
+                    }
+                },
+                Launch = "action=viewStory&storyId=92187"
+            };
+
+            // Create the toast notification
+            var toastNotif = new ToastNotification(toastContent.GetXml());
+
+            // And send the notification
+            ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
+        }
+
+        private void Button_Click_10(object sender, RoutedEventArgs e)
+        {
+            var toastContent = new ToastContent()
+            {
+                Visual = new ToastVisual()
+                {
+                    BindingGeneric = new ToastBindingGeneric()
+                    {
+                        Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "BREAKING NEWS!!!"
+                },
+                new AdaptiveText()
+                {
+                    Text = "To view this notification, install Adobe® Flash Player™"
+                }
+            },
+                        AppLogoOverride = new ToastGenericAppLogo()
+                        {
+                            Source = "Assets/Images/flashplayer.png"
+                        }
+                    }
+                },
+                Launch = "action=viewStory&storyId=92187"
+            };
+
+            // Create the toast notification
+            var toastNotif = new ToastNotification(toastContent.GetXml());
+
+            // And send the notification
+            ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
+        }
+
+        private void Button_Click_11(object sender, RoutedEventArgs e)
+        {
+            var toastContent = new ToastContent()
+            {
+                Visual = new ToastVisual()
+                {
+                    BindingGeneric = new ToastBindingGeneric()
+                    {
+                        Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "BREAKING NEWS!!!"
+                },
+                new AdaptiveText()
+                {
+                    Text = "Your McAfee™ subscription plan has expired. Please select a new one below."
+                }
+            },
+                        HeroImage = new ToastGenericHeroImage()
+                        {
+                            Source = "Assets/Images/mcafeehero.png"
+                        },
+                        AppLogoOverride = new ToastGenericAppLogo()
+                        {
+                            Source = "Assets/Images/mcafee.png"
+                        }
+                    }
+                },
+                Actions = new ToastActionsCustom()
+                {
+                    Inputs =
+        {
+            new ToastSelectionBox("answer")
+            {
+                DefaultSelectionBoxItemId = "wrongDefault",
+                Items =
+                {
+                    new ToastSelectionBoxItem("wrongDefault", "Essential - $119.99"),
+                    new ToastSelectionBoxItem("wrong", "McAfee+™ Premium Individual - $149.99"),
+                    new ToastSelectionBoxItem("right", "McAfee+™ Advanced Individual - $199.99")
+                }
+            }
+        },
+                    Buttons =
+        {
+            new ToastButtonSnooze("yeah this gud!"),
+            new ToastButton("no never cancel it rn", "dismiss")
+            {
+                ActivationType = ToastActivationType.Background
+            }
+        }
+                },
+                Launch = "action=viewStory&storyId=92187"
+            };
+
+            // Create the toast notification
+            var toastNotif = new ToastNotification(toastContent.GetXml());
+
+            // And send the notification
+            ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
+        }
+
+        private void Button_Click_12(object sender, RoutedEventArgs e)
+        {
+            var toastContent = new ToastContent()
+            {
+                Visual = new ToastVisual()
+                {
+                    BindingGeneric = new ToastBindingGeneric()
+                    {
+                        Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "BREAKING NEWS!!!"
+                },
+                new AdaptiveText()
+                {
+                    Text = "To view this notification, upload a NoSkid certificate."
+                }
+            },
+                        AppLogoOverride = new ToastGenericAppLogo()
+                        {
+                            Source = "Assets/Images/noskid.png"
+                        }
+                    }
+                },
+                Launch = "action=viewStory&storyId=92187"
+            };
+
+            // Create the toast notification
+            var toastNotif = new ToastNotification(toastContent.GetXml());
+
+            // And send the notification
+            ToastNotificationManager.CreateToastNotifier().Show(toastNotif);
+        }
     }
 }
