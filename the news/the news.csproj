@@ -146,7 +146,6 @@
     <Content Include="Assets\Images\answer.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Images\doom.svg" />
     <Content Include="Assets\Images\flashplayer.png" />
     <Content Include="Assets\Images\googleplayservices.png" />
     <Content Include="Assets\Images\h.gif">
